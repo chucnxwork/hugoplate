@@ -4,3 +4,9 @@ label = "En"
 locale = "en-us"
 contentDir = "content/english"
 weight = 1
+
+[vi]
+label = "Vi"
+locale = "vi-vn"
+contentDir = "content/vietnamese"
+weight = 1
