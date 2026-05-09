@@ -1,0 +1,63 @@
+############# Vietnamese navigation ##############
+
+# main menu
+[[main]]
+name = "Trang chủ"
+url = "/vi/"
+weight = 1
+
+[[main]]
+name = "About"
+url = "/vi/about"
+weight = 2
+
+[[main]]
+name = "Elements"
+url = "/vi/elements"
+weight = 3
+
+[[main]]
+weight = 4
+name = "Pages"
+
+[[main]]
+parent = "Pages"
+name = "Blog"
+url = "/vi/blog"
+
+[[main]]
+parent = "Pages"
+name = "Liên hệ"
+url = "/vi/contact"
+
+[[main]]
+parent = "Pages"
+name = "Authors"
+url = "/vi/authors"
+
+[[main]]
+parent = "Pages"
+name = "Categories"
+url = "/vi/categories"
+
+[[main]]
+parent = "Pages"
+name = "404 Page"
+url = "/vi/404"
+
+
+# footer menu
+[[footer]]
+name = "About"
+url = "/vi/about"
+weight = 1
+
+[[footer]]
+name = "Elements"
+url = "/vi/elements"
+weight = 2
+
+[[footer]]
+name = "Privacy Policy"
+url = "/vi/privacy-policy"
+weight = 3
