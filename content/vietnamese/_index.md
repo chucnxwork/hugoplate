@@ -1,13 +1,13 @@
 ---
 # Banner
 banner:
-  title: "The Ultimate Starter Template You Need To Start Your Hugo Project"
-  content: "Hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jump-start your Hugo project and save valuable time."
+  title: "Đồng hành cùng bạn - Tìm nhà ở, xây dựng gia sản"
+  content: "Bất động sản với cả trái tim - để sống, đầu tư và phát triển ở Colorado."
   image: "/images/banner.png"
   button:
     enable: true
-    label: "Fork Deploy and Edit Online 🚀"
-    link: "https://app.sitepins.com/new/clone?name=Hugoplate&repository=https://github.com/zeon-studio/hugoplate?aff=hugoplate"
+    label: "Về chúng tôi"
+    link: "/vi/about"
 
 # Features
 features:
@@ -26,28 +26,28 @@ features:
       label: "Get Started Now"
       link: "#"
 
-  - title: "Discover the Key Features Of Hugo"
+  - title: "Tại sao chọn tôi?"
     image: "/images/service-2.png"
-    content: "Hugo is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
+    content: "Kết nối với tôi — tôi luôn sẵn sàng lắng nghe và đồng hành cùng bạn trên hành trình bất động sản."
     bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
-    button:
-      enable: true
-      label: "Get Started Now"
-      link: "https://github.com/zeon-studio/hugoplate"
-
-  - title: "The Top Reasons to Choose Hugo for Your Hugo Project"
-    image: "/images/service-3.png"
-    content: "With Hugo, you can build modern and content-focused websites without sacrificing performance or ease of use."
-    bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Hugo a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
+      - "Đa ngôn ngữ: English – Vietnamese – Korean"
+      - "Am hiểu thị trường"
+      - "Dịch vụ tận tâm, phản hồi nhanh"
+      - "Kinh nghiệm trong chăm sóc khách hàng, CRM, đàm phán"
     button:
       enable: false
       label: ""
       link: ""
+
+  - title: "Liên hệ"
+    image: "/images/service-3.png"
+    content: ""
+    bulletpoints:
+      - "📱 Điện thoại: 410-940-7756"
+      - "📧 Email: thaontbroker@gmail.com"
+      - "🏢 Văn phòng: Coldwell Banker Realty – Parker, CO"
+    button:
+      enable: true
+      label: "LinkedIn"
+      link: "https://www.linkedin.com/in/thi-thao-nguyen-067a6b334/"
 ---
