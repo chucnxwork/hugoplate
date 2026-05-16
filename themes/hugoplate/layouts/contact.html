@@ -40,6 +40,8 @@
                 placeholder="{{ T "message-goes-here" | default "Message goes here..." }}"
                 rows="8"></textarea>
             </div>
+            <input type="hidden" name="_subject" value="New contact request from {{ site.Title }}" />
+            <input type="hidden" name="form_type" value="contact" />
             <button type="submit" class="btn btn-primary">{{ T "submit" | default "Submit" }}</button>
           </form>
         </div>

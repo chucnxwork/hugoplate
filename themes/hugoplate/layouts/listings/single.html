@@ -70,6 +70,10 @@
               <a class="btn btn-primary" href="/contact">Contact Agent</a>
             </div>
           </div>
+
+          {{ $bookingAction := site.Params.booking_form_action | default site.Params.contact_form_action }}
+          {{ $hiddenFields := dict "_subject" (printf "Booking request for %s" .Title) "form_type" "booking" "listing_title" .Title "listing_url" .Permalink "listing_price" (printf "%s %s" .Params.price .Params.currency) "agent" .Params.agent }}
+          {{ partial "booking-form.html" (dict "Title" "Request a viewing" "Action" $bookingAction "ButtonText" "Request viewing" "HiddenFields" $hiddenFields) }}
         </aside>
       </div>
     </div>
