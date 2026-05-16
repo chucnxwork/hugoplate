@@ -1,0 +1,16 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+  <section class="section">
+    <div class="container">
+      <div class="grid md:grid-cols-3 gap-6">
+        {{ range .Pages }}
+          <article class="agent-card card p-4 text-center">
+            {{ if .Params.photo }}<img src="{{ .Params.photo }}" alt="{{ .Title }}" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover" />{{ end }}
+            <h3 class="font-semibold"><a href="{{ .RelPermalink }}">{{ .Params.name | default .Title }}</a></h3>
+            <div class="text-sm text-muted">{{ .Params.role }}</div>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

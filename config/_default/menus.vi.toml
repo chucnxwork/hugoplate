@@ -32,18 +32,28 @@ url = "/vi/contact"
 
 [[main]]
 parent = "Pages"
-name = "Authors"
+name = "Các tác giả"
 url = "/vi/authors"
 
 [[main]]
 parent = "Pages"
-name = "Categories"
+name = "Danh mục"
 url = "/vi/categories"
 
 [[main]]
 parent = "Pages"
 name = "404 Page"
 url = "/vi/404"
+
+[[main]]
+parent = "Pages"
+name = "Danh sách BĐS"
+url = "/vi/listings"
+
+[[main]]
+parent = "Pages"
+name = "Agents"
+url = "/vi/agents"
 
 
 # footer menu

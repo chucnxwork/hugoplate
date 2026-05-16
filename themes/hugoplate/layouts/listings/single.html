@@ -1,0 +1,77 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 md:col-8">
+          <h1 class="text-3xl font-bold mb-2">{{ .Title }}</h1>
+          <div class="mb-4 text-xl text-primary">{{ with .Params.price }}{{ . | humanize }} {{ $.Params.currency | default "USD" }}{{ end }}</div>
+
+          {{ with .Params.images }}
+            <div class="mb-4">
+                <img src="{{ index . 0 }}" alt="{{ $.Title }}" class="w-full rounded" />
+              </div>
+          {{ end }}
+
+          <div class="mb-6 prose">
+            {{ .Content }}
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4 mb-6">
+            <div><strong>Bedrooms:</strong> {{ .Params.bedrooms }}</div>
+            <div><strong>Bathrooms:</strong> {{ .Params.bathrooms }}</div>
+            <div><strong>Area:</strong> {{ .Params.area }} {{ .Params.area_unit }}</div>
+          </div>
+
+          <!-- map for listing -->
+          {{ $useOsm := site.Params.openstreet_map.enable }}
+          {{ $useGmap := site.Params.google_map.enable }}
+          {{ if or $useGmap $useOsm }}
+            {{ $map := site.Params.google_map }}
+            {{ if $useOsm }}
+              {{ $map = site.Params.openstreet_map }}
+            {{ end }}
+            <div id="map" class="map-container" style="height:300px;" data-latitude="{{ .Params.latitude }}" data-longitude="{{ .Params.longitude }}" data-marker="{{ $map.map_marker | relURL }}" data-marker-name="{{ .Title }}"></div>
+
+            {{ if $useGmap }}
+              {{ $gmap := resources.Get "plugins/maps/google-map.js" }}
+              <script defer src="{{ $gmap.RelPermalink }}"></script>
+              <script src="https://maps.googleapis.com/maps/api/js?key={{ site.Params.google_map.map_api_key }}&libraries=places"></script>
+            {{ end }}
+
+            {{ if $useOsm }}
+              <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+              {{ $osm := resources.Get "plugins/maps/osm-map.js" }}
+              <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+              <script defer src="{{ $osm.RelPermalink }}"></script>
+            {{ end }}
+          {{ end }}
+
+        </div>
+
+        <aside class="col-12 md:col-4">
+          <div class="card p-4">
+            <h3 class="font-semibold mb-2">Agent</h3>
+            {{ with .Params.agent }}
+              {{ $agent := site.GetPage (printf "/agents/%s.md" .) }}
+              {{ if not $agent }}
+                {{/* try by slug */}}
+                {{ $agent = site.GetPage (printf "/agents/%s/" .) }}
+              {{ end }}
+              {{ if $agent }}
+                <a href="{{ $agent.RelPermalink }}">{{ $agent.Params.name | default $agent.Title }}</a>
+              {{ else }}
+                <div>{{ . }}</div>
+              {{ end }}
+            {{ end }}
+
+            <div class="mt-4">
+              <a class="btn btn-primary" href="/contact">Contact Agent</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+{{ end }}

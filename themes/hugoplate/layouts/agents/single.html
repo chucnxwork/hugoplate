@@ -1,0 +1,42 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 md:col-8">
+          <div class="flex items-center gap-4 mb-4">
+            {{ if .Params.photo }}
+              <img src="{{ .Params.photo }}" alt="{{ .Title }}" class="w-24 h-24 rounded-full object-cover" />
+            {{ end }}
+            <div>
+              <h1 class="text-2xl font-bold">{{ .Params.name | default .Title }}</h1>
+              <div class="text-sm text-muted">{{ .Params.role }}</div>
+            </div>
+          </div>
+
+          <div class="prose mb-6">{{ .Content }}</div>
+
+          <h3 class="font-semibold mb-3">Listings by {{ .Params.name | default .Title }}</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            {{ $slug := .File.BaseFileName }}
+            {{ range where site.RegularPages "Section" "listings" }}
+              {{ if eq .Params.agent $slug }}
+                <article class="listing-card card p-3">
+                  <a href="{{ .RelPermalink }}" class="font-semibold">{{ .Title }}</a>
+                  <div class="text-sm text-muted">{{ .Params.city }}, {{ .Params.state }}</div>
+                </article>
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+        <aside class="col-12 md:col-4">
+          <div class="card p-4">
+            <h4>Contact</h4>
+            {{ if .Params.email }}<div>Email: <a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></div>{{ end }}
+            {{ if .Params.phone }}<div>Phone: {{ .Params.phone }}</div>{{ end }}
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+{{ end }}
