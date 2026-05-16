@@ -47,17 +47,21 @@
     </div>
   </section>
 
-  <!-- google map -->
-  {{ with site.Params.google_map }}
-    {{ if .enable }}
-      <div
-        id="map"
-        style="height: 400px;"
-        data-latitude="{{ .map_latitude }}"
-        data-longitude="{{ .map_longitude }}"
-        data-marker="{{ .map_marker | relURL }}"
-        data-marker-name="{{ site.Title }}"></div>
+  <!-- map (Google Maps or OpenStreetMap) -->
+  {{ $useOsm := site.Params.openstreet_map.enable }}
+  {{ $useGmap := site.Params.google_map.enable }}
+  {{ if or $useGmap $useOsm }}
+    {{ $map := site.Params.google_map }}
+    {{ if $useOsm }}
+      {{ $map = site.Params.openstreet_map }}
     {{ end }}
+    <div
+      id="map"
+      style="height: 400px;"
+      data-latitude="{{ $map.map_latitude }}"
+      data-longitude="{{ $map.map_longitude }}"
+      data-marker="{{ $map.map_marker | relURL }}"
+      data-marker-name="{{ site.Title }}"></div>
   {{ end }}
 
   {{ with site.Params.subscription }}
@@ -111,10 +115,17 @@
     {{ end }}
   {{ end }}
 
-  {{ if site.Params.google_map.enable }}
-    {{ $gmap:= resources.Get "plugins/maps/google-map.js" }}
+  {{ if $useGmap }}
+    {{ $gmap := resources.Get "plugins/maps/google-map.js" }}
     <script defer src="{{ $gmap.RelPermalink }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ site.Params.google_map.map_api_key }}&libraries=places"></script>
+  {{ end }}
+
+  {{ if $useOsm }}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    {{ $osm := resources.Get "plugins/maps/osm-map.js" }}
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script defer src="{{ $osm.RelPermalink }}"></script>
   {{ end }}
 
 {{ end }}
