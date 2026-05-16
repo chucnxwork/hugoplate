@@ -1,12 +1,12 @@
 ---
 enable: true
-title: "Ready to build your next project with Hugo?"
+title: "Sẵn sàng tìm kiếm ngôi nhà của bạn?"
 image: "/images/call-to-action.png"
-description: "Experience the future of web development with Hugoplate and Hugo. Build lightning-fast static sites with ease and flexibility."
+description: "Bất kể nhu cầu của bạn là mua, bán, hay đầu tư, chúng tôi luôn sẵn sàng lắng nghe."
 button:
   enable: true
-  label: "Fork Deploy and Edit Online 🚀"
-  link: "https://app.sitepins.com/new/clone?name=Hugoplate&repository=https://github.com/zeon-studio/hugoplate?aff=hugoplate"
+  label: "Liên hệ với chúng tôi"
+  link: "/vi/contact"
 
 # don't create a separate page
 build:

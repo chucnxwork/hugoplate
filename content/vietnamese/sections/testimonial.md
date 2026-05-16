@@ -1,29 +1,28 @@
 ---
 enable: true
-title: "What Users Are Saying About Hugoplate"
-description: "Don't just take our word for it - hear from some of our satisfied users!  Check out some of our testimonials below to see what others are saying about Hugoplate."
+title: "What Clients Say About Our Brokerage"
+description: "Trusted service, smart negotiations, and reliable results. See how we support buyers, sellers, and investors through every transaction."
 
-# Testimonials
 testimonials:
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Alicia Barnes"
+    designation: "Home Buyer"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "The team helped us find our dream home faster than we expected, and the closing process was stress-free."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Marcus Lee"
+    designation: "Property Investor"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "Their market insight was invaluable — we secured a great investment with confidence."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Sophie Turner"
+    designation: "First-Time Seller"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "Every step was explained clearly, and the team negotiated a fantastic result for our property."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Daniel Ortiz"
+    designation: "Relocation Client"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "They made our move easy with fast responses and expert local advice."
 
 # don't create a separate page
 build:

@@ -1,53 +1,50 @@
 ---
 # Banner
 banner:
-  title: "Your Partner in Real Estate – Find a Home, Build Wealth"
-  content: "Real estate with heart, integrity, and insight —for living, investing, and growing in Colorado."
+  title: "Find Your Perfect Home with Expert Brokerage"
+  content: "Premium real estate services for buyers, sellers, and investors — delivered with market knowledge, local expertise, and a personal touch."
   image: "/images/banner.png"
   button:
     enable: true
-    label: "About us"
-    link: "/about"
+    label: "View Listings"
+    link: "/listings"
 
 # Features
 features:
-  - title: "What's Included in Hugoplate"
+  - title: "Full-Service Brokerage"
     image: "/images/service-1.png"
-    content: "Hugoplate is a comprehensive starter template that includes everything you need to get started with your Hugo project. What's Included in Hugoplate"
+    content: "From home valuation to closing, we support every step of your real estate journey with clarity, speed, and proven results."
     bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Hugo and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
-    button:
-      enable: false
-      label: "Get Started Now"
-      link: "#"
-
-  - title: "Discover the Key Features Of Hugo"
-    image: "/images/service-2.png"
-    content: "Hugo is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
-    bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
+      - "Property marketing across high-converting channels"
+      - "Buyer representation with expert negotiation"
+      - "Local market insights and pricing strategy"
+      - "Custom financing guidance and closing support"
     button:
       enable: true
-      label: "Get Started Now"
-      link: "https://github.com/zeon-studio/hugoplate"
+      label: "Speak with an agent"
+      link: "/contact"
 
-  - title: "The Top Reasons to Choose Hugo for Your Hugo Project"
-    image: "/images/service-3.png"
-    content: "With Hugo, you can build modern and content-focused websites without sacrificing performance or ease of use."
+  - title: "Curated Homes & Investment Opportunities"
+    image: "/images/service-2.png"
+    content: "Find hand-selected listings that match your lifestyle and financial goals, from move-in ready homes to growth-oriented investments."
     bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Hugo a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
+      - "Featured properties in top neighborhoods"
+      - "Personalized search for your exact criteria"
+      - "Access to off-market and priority listings"
+    button:
+      enable: true
+      label: "Browse Listings"
+      link: "/listings"
+
+  - title: "Client-First Service Every Time"
+    image: "/images/service-3.png"
+    content: "Our brokerage is built around trust, responsiveness, and results — delivering stress-free transactions for every client."
+    bulletpoints:
+      - "Transparent communication throughout the process"
+      - "Dedicated support from listing to closing"
+      - "Proven track record of successful deals"
     button:
       enable: false
       label: ""
-      link: ""
+      link: "#"
 ---

@@ -78,6 +78,67 @@
   {{ end }}
   <!-- /Features -->
 
+  <!-- Featured Listings -->
+  {{ $featured := where (where site.RegularPages "Section" "listings") "Params.status" "for-sale" | first 4 }}
+  {{ if gt (len $featured) 0 }}
+    <section class="section">
+      <div class="container">
+        <div class="row justify-center mb-10">
+          <div class="md:col-10 lg:col-8 text-center">
+            <span class="text-primary uppercase tracking-[0.4em] font-semibold">Featured properties</span>
+            <h2 class="mt-4">Premium homes and investment opportunities</h2>
+            <p class="mt-4 text-muted">Explore a curated selection of our best listings designed for modern buyers and investors.</p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+          {{ range $featured }}
+            <article class="listing-card card p-5">
+              {{ with .Params.images }}
+                <img src="{{ index . 0 }}" alt="{{ .Title }}" class="w-full h-56 object-cover rounded mb-4" />
+              {{ end }}
+              <div class="text-sm uppercase tracking-[0.14em] text-muted mb-2">{{ .Params.property_type | title }} · {{ .Params.city }}, {{ .Params.state }}</div>
+              <h3 class="text-lg font-semibold mb-2"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <div class="price mb-3">{{ with .Params.price }}{{ . | humanize }} {{ .Params.currency | default "USD" }}{{ end }}</div>
+              <div class="flex flex-wrap gap-3 text-sm text-muted">
+                <span>{{ .Params.bedrooms }} bd</span>
+                <span>{{ .Params.bathrooms }} ba</span>
+                <span>{{ .Params.area }} {{ .Params.area_unit }}</span>
+              </div>
+            </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Meet Our Agents -->
+  {{ $agents := first 4 (where site.RegularPages "Section" "agents") }}
+  {{ if gt (len $agents) 0 }}
+    <section class="section-sm bg-light dark:bg-darkmode-light">
+      <div class="container">
+        <div class="row justify-center mb-10">
+          <div class="md:col-10 lg:col-8 text-center">
+            <span class="text-primary uppercase tracking-[0.4em] font-semibold">Our experts</span>
+            <h2 class="mt-4">Work with brokers who know the market</h2>
+            <p class="mt-4 text-muted">Our team is ready to guide your next purchase, sale, or investment from start to finish.</p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+          {{ range $agents }}
+            <article class="agent-card card p-5">
+              {{ if .Params.photo }}
+                <img src="{{ .Params.photo }}" alt="{{ .Params.name | default .Title }}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+              {{ end }}
+              <h3 class="text-xl font-semibold mb-1"><a href="{{ .RelPermalink }}">{{ .Params.name | default .Title }}</a></h3>
+              <p class="text-sm text-muted mb-4">{{ .Params.role }}</p>
+              <a class="btn btn-outline btn-sm" href="{{ .RelPermalink }}">View profile</a>
+            </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
   <!-- Testimonials -->
   {{ with site.GetPage "sections/testimonial" }}
     {{ if .Params.enable }}
