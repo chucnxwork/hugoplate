@@ -1,12 +1,12 @@
 ################ English language ##################
 [en]
-label = "En"
+label = "English"
 locale = "en-us"
 contentDir = "content/english"
 weight = 1
 
 [vi]
-label = "Vi"
+label = "Tiếng Việt"
 locale = "vi-vn"
 contentDir = "content/vietnamese"
 weight = 1
