@@ -6,7 +6,7 @@ type: "listing"
 price: 450000
 currency: "USD"
 status: "for-sale"
-property_type: "house"
+property_type: "nhà"
 bedrooms: 3
 bathrooms: 2
 area: 1500

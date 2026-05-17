@@ -92,19 +92,7 @@
         </div>
         <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
           {{ range $featured }}
-            <article class="listing-card card p-5">
-              {{ with .Params.images }}
-                <img src="{{ index . 0 }}" alt="{{ $.Title }}" class="w-full h-56 object-cover rounded mb-4" />
-              {{ end }}
-              <div class="text-sm uppercase tracking-[0.14em] text-muted mb-2">{{ .Params.property_type | title }} · {{ .Params.city }}, {{ .Params.state }}</div>
-              <h3 class="text-lg font-semibold mb-2"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-              <div class="price mb-3">{{ with .Params.price }}{{ . | humanize }} {{ $.Params.currency | default "USD" }}{{ end }}</div>
-              <div class="flex flex-wrap gap-3 text-sm text-muted">
-                <span>{{ .Params.bedrooms }} bd</span>
-                <span>{{ .Params.bathrooms }} ba</span>
-                <span>{{ .Params.area }} {{ .Params.area_unit }}</span>
-              </div>
-            </article>
+            {{ partial "components/listing-card" . }}
           {{ end }}
         </div>
       </div>
@@ -125,14 +113,7 @@
         </div>
         <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
           {{ range $agents }}
-            <article class="agent-card card p-5">
-              {{ if .Params.photo }}
-                <img src="{{ .Params.photo }}" alt="{{ .Params.name | default .Title }}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
-              {{ end }}
-              <h3 class="text-xl font-semibold mb-1"><a href="{{ .RelPermalink }}">{{ .Params.name | default .Title }}</a></h3>
-              <p class="text-sm text-muted mb-4">{{ .Params.role }}</p>
-              <a class="btn btn-outline btn-sm" href="{{ .RelPermalink }}">View profile</a>
-            </article>
+            {{ partial "components/agent-card" . }}
           {{ end }}
         </div>
       </div>

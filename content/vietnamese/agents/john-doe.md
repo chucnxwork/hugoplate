@@ -4,7 +4,7 @@ date: 2026-05-16T12:00:00Z
 draft: false
 type: "agent"
 name: "John Doe"
-role: "Senior Broker"
+role: "Chuyên viên cấp cao"
 email: "john.doe@example.com"
 phone: "+1-555-123-4567"
 photo: "/images/agents/john-doe.jpg"

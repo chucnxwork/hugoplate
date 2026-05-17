@@ -1,0 +1,7 @@
+<article class="agent-card card p-5">
+  {{ if .Params.photo }}
+    <img src="{{ .Params.photo }}" alt="{{ .Params.name | default .Title }}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+  {{ end }}
+  <h3 class="text-xl font-semibold mb-1"><a href="{{ .RelPermalink }}">{{ .Params.name | default .Title }}</a></h3>
+  <p class="text-sm text-muted mb-4">{{ .Params.role }}</p>
+</article>
