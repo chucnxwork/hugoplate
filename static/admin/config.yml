@@ -34,3 +34,57 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Categories', name: 'categories', widget: 'list' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'listings_en' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Listings English' # Used in the UI, ie.: "New Post"
+    folder: 'content/english/listings' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}'
+    editor:
+      preview: true
+    fields: # The fields each document in this collection have
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image', widget: 'list' }
+      - { label: 'Price', name: 'price', widget: 'number' }
+      - { label: 'Currency', name: 'currency', widget: 'string' }
+      - { label: 'Status (for-sale, for-rent, sold)', name: 'status', widget: 'string' }
+      - { label: 'Property Type', name: 'property_type', widget: 'string' }
+      - { label: 'Number of bedrooms', name: 'bedrooms', widget: 'number' }
+      - { label: 'Number of bathrooms', name: 'bathrooms', widget: 'number' }
+      - { label: 'Area', name: 'area', widget: 'number' }
+      - { label: 'Area unit', name: 'area_unit', widget: 'string' }
+      - { label: 'Address', name: 'address', widget: 'string' }
+      - { label: 'City', name: 'city', widget: 'string' }
+      - { label: 'State', name: 'state', widget: 'string' }
+      - { label: 'Postal Code', name: 'postal_code', widget: 'string' }
+      - { label: 'Latitude', name: 'latitude', widget: 'string' }
+      - { label: 'Longitude', name: 'longitude', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'listings_vn' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Listings Vietnamese' # Used in the UI, ie.: "New Post"
+    folder: 'content/vietnamese/listings' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}'
+    editor:
+      preview: true
+    fields: # The fields each document in this collection have
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image', widget: 'list' }
+      - { label: 'Price', name: 'price', widget: 'number' }
+      - { label: 'Currency', name: 'currency', widget: 'string' }
+      - { label: 'Status (for-sale, for-rent, sold)', name: 'status', widget: 'string' }
+      - { label: 'Property Type', name: 'property_type', widget: 'string' }
+      - { label: 'Number of bedrooms', name: 'bedrooms', widget: 'number' }
+      - { label: 'Number of bathrooms', name: 'bathrooms', widget: 'number' }
+      - { label: 'Area', name: 'area', widget: 'number' }
+      - { label: 'Area unit', name: 'area_unit', widget: 'string' }
+      - { label: 'Address', name: 'address', widget: 'string' }
+      - { label: 'City', name: 'city', widget: 'string' }
+      - { label: 'State', name: 'state', widget: 'string' }
+      - { label: 'Postal Code', name: 'postal_code', widget: 'string' }
+      - { label: 'Latitude', name: 'latitude', widget: 'string' }
+      - { label: 'Longitude', name: 'longitude', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
