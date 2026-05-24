@@ -64,6 +64,10 @@
       data-longitude="{{ $map.map_longitude }}"
       data-marker="{{ $map.map_marker | relURL }}"
       data-marker-name="{{ site.Title }}"></div>
+
+    {{ $mapMarkerImg := resources.Get $map.map_marker }}
+    <img src="{{ $mapMarkerImg.Permalink }}" class="hidden" />
+
   {{ end }}
 
   {{ with site.Params.subscription }}
