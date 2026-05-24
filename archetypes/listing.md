@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
-type: "listing"
+type: "listings"
 price: 0
 currency: "USD"
 status: "for-sale" # for-sale / for-rent / sold

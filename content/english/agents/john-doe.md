@@ -2,7 +2,7 @@
 title: "John Doe"
 date: 2026-05-16T12:00:00Z
 draft: false
-type: "agent"
+type: "agents"
 name: "John Doe"
 role: "Senior Broker"
 email: "john.doe@example.com"

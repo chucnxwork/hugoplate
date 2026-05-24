@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
-type: "agent"
+type: "agents"
 name: "{{ replace .Name "-" " " | title }}"
 role: "Broker"
 email: ""

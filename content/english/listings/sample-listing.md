@@ -2,7 +2,7 @@
 title: "Charming 3BR Family Home"
 date: 2026-05-16T12:00:00Z
 draft: false
-type: "listing"
+type: "listings"
 price: 450000
 currency: "USD"
 status: "for-sale"
@@ -19,7 +19,7 @@ latitude: "39.7392"
 longitude: "-104.9903"
 agent: "john-doe"
 images:
-  - "/images/listings/house-1.jpg"
+  - "/images/gallery/01.jpg"
 features:
   - "Hardwood floors"
   - "Updated kitchen"
