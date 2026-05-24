@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "yarn project-setup; yarn build"
+command = "yarn project-setup; node scripts/themeGenerator.js; hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic --baseURL https://thaogaeulhomes.netlify.app/ --appendPort=false"
 
 [build.environment]
 HUGO_VERSION = "0.158.0"
