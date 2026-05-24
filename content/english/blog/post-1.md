@@ -6,11 +6,13 @@ date: 2026-05-24T10:58:00.000+07:00
 tags:
   - nextjs
   - tailwind
-image: /images/image-placeholder.png
+description: this is meta description
+image: /img/faf6f74b380cf852a11d.jpg
 categories:
   - Application
   - Data
-description: this is meta description
+  - Cooking
+  - Real-Estate
 meta_title: ""
 ---
 Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
