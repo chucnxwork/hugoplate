@@ -7,53 +7,41 @@ url = "/vi/"
 weight = 1
 
 [[main]]
-name = "About"
+name = "Giới thiệu"
 url = "/vi/about"
 weight = 2
 
 [[main]]
-name = "Elements"
-url = "/vi/elements"
+name = "Danh sách BĐS"
+url = "/vi/listings"
 weight = 3
 
 [[main]]
-weight = 4
-name = "Pages"
-
-[[main]]
-parent = "Pages"
 name = "Blog"
-url = "/vi/blog"
+weight = 4
 
 [[main]]
-parent = "Pages"
+parent = "Blog"
+name = "Tất cả bài đăng"
+url = "/vi/blog/"
+weight = 1
+
+[[main]]
+parent = "Blog"
+name = "Tin tức Bất động sản"
+url = "/vi/categories/real-estate/"
+weight = 2
+
+[[main]]
+parent = "Blog"
+name = "Mẹo nấu ăn"
+url = "/vi/categories/cooking/"
+weight = 3
+
+[[main]]
 name = "Liên hệ"
 url = "/vi/contact"
-
-[[main]]
-parent = "Pages"
-name = "Các tác giả"
-url = "/vi/authors"
-
-[[main]]
-parent = "Pages"
-name = "Danh mục"
-url = "/vi/categories"
-
-[[main]]
-parent = "Pages"
-name = "404 Page"
-url = "/vi/404"
-
-[[main]]
-parent = "Pages"
-name = "Danh sách BĐS"
-url = "/vi/listings"
-
-[[main]]
-parent = "Pages"
-name = "Agents"
-url = "/vi/agents"
+weight = 5
 
 
 # footer menu

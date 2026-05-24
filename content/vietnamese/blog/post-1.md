@@ -9,6 +9,7 @@ categories:
   - Application
   - Data
   - Real-Estate
+  - Cooking
 tags:
   - nextjs
   - tailwind

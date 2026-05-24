@@ -7,7 +7,7 @@ tags:
   - nextjs
   - tailwind
 description: this is meta description
-image: /img/faf6f74b380cf852a11d.jpg
+image: /images/cms/018b92c55e829edcc793.jpg
 categories:
   - Application
   - Data

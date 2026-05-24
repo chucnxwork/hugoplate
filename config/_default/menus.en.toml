@@ -18,8 +18,25 @@ weight = 3
 
 [[main]]
 name = "Blog"
-url = "/blog"
 weight = 4
+
+[[main]]
+parent = "Blog"
+name = "All Blog Posts"
+url = "/blog/"
+weight = 1
+
+[[main]]
+parent = "Blog"
+name = "Real Estate News"
+url = "/categories/real-estate/"
+weight = 2
+
+[[main]]
+parent = "Blog"
+name = "Cooking Tips"
+url = "/categories/cooking/"
+weight = 3
 
 [[main]]
 name = "Contact"
