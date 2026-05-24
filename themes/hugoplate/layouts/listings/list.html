@@ -6,11 +6,11 @@
         <div class="grid gap-4 lg:grid-cols-5">
           <div>
             <label for="listing-search" class="form-label">Search listings</label>
-            <input id="listing-search" type="search" class="form-input" placeholder="Search by title, city, state, type..." />
+            <input id="listing-search" type="search" class="w-full" placeholder="Search by title, city, state, type..." />
           </div>
           <div>
             <label for="listing-status" class="form-label">Status</label>
-            <select id="listing-status" class="form-select">
+            <select id="listing-status" class="form-select w-full">
               <option value="">Any status</option>
               <option value="for-sale">For sale</option>
               <option value="for-rent">For rent</option>
@@ -19,7 +19,7 @@
           </div>
           <div>
             <label for="listing-bedrooms" class="form-label">Bedrooms</label>
-            <select id="listing-bedrooms" class="form-select">
+            <select id="listing-bedrooms" class="form-select w-full">
               <option value="">Any</option>
               <option value="1">1+</option>
               <option value="2">2+</option>
@@ -30,7 +30,7 @@
           </div>
           <div>
             <label for="listing-price" class="form-label">Price range</label>
-            <select id="listing-price" class="form-select">
+            <select id="listing-price" class="form-select w-full">
               <option value="">Any</option>
               <option value="0-100000">Up to $100k</option>
               <option value="100000-300000">$100k–$300k</option>
@@ -39,7 +39,7 @@
             </select>
           </div>
           <div class="flex items-end gap-3">
-            <button id="listing-reset" type="button" class="btn btn-outline w-full">Reset</button>
+            <button id="listing-reset" type="button" class="btn btn-outline-primary w-full">Reset</button>
           </div>
         </div>
       </div>
