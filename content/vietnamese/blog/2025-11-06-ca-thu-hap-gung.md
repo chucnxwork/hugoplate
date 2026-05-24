@@ -1,12 +1,12 @@
 ---
 title: CÁ THU HẤP GỪNG
-date: 2026-11-06T17:33:00.000+07:00
+date: 2025-11-06T17:33:00.000+07:00
 description: CÁ THU HẤP GỪNG
 image: /images/cms/ca-thu-hap-gung.png
 categories:
   - Cooking
 ---
-# **Nguyên liệu (2 phần ăn)**
+## **Nguyên liệu (2 phần ăn)**
 
 Cá tươi: 1 con (cá lóc, cá chép, cá diêu hồng hoặc cá basa đều được) hoặc Cá thu tươi (cắt khúc 2–3 cm) 2 lát
 
@@ -20,7 +20,7 @@ Cá tươi: 1 con (cá lóc, cá chép, cá diêu hồng hoặc cá basa đều 
 
 Rượu gừng / rượu trắng (để khử tanh)
 
-# **Sơ chế**
+## **Sơ chế**
 
 1. **Rửa cá sạch:**
 
@@ -36,7 +36,7 @@ Rượu gừng / rượu trắng (để khử tanh)
    * Hành lá cắt khúc 5 cm.
    * Hành khô bóc vỏ, thái mỏng.
 
-# **Ướp cá (10–15 phút)**
+## **Ướp cá (10–15 phút)**
 
 Trộn đều hỗn hợp:
 
@@ -51,7 +51,7 @@ Thoa đều hỗn hợp lên hai mặt cá, để **ngấm khoảng 15 phút**.
 
 ![](/images/cms/ca-thu-hap-gung-1.png)
 
-# **Hấp cá**
+## **Hấp cá**
 
 1. Chuẩn bị nồi hấp, đun nước sôi trước.
 2. Trên đĩa hấp:
@@ -68,7 +68,7 @@ Thoa đều hỗn hợp lên hai mặt cá, để **ngấm khoảng 15 phút**.
 
 ![](/images/cms/ca-thu-hap-gung-2.png)
 
-# **Mẹo chuẩn vị Hà Nội**
+## **Mẹo chuẩn vị Hà Nội**
 
 * **Không hấp quá lâu** để cá không khô.
 * Dùng **nước mắm cốt nguyên chất Phú Quốc hoặc Cát Hải** cho vị thơm dịu.
