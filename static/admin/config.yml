@@ -45,7 +45,7 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Image', name: 'image', widget: 'image', widget: 'list' }
+      - { label: 'Image', name: 'image', widget: 'list' }
       - { label: 'Price', name: 'price', widget: 'number' }
       - { label: 'Currency', name: 'currency', widget: 'string' }
       - { label: 'Status (for-sale, for-rent, sold)', name: 'status', widget: 'string' }
@@ -72,7 +72,7 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Image', name: 'image', widget: 'image', widget: 'list' }
+      - { label: 'Image', name: 'image', widget: 'list' }
       - { label: 'Price', name: 'price', widget: 'number' }
       - { label: 'Currency', name: 'currency', widget: 'string' }
       - { label: 'Status (for-sale, for-rent, sold)', name: 'status', widget: 'string' }
