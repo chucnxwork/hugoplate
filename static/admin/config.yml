@@ -48,8 +48,8 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Images', name: 'images', widget: 'list', field: { label: 'Image', name: 'image', widget: 'image' } }
       - { label: 'Price', name: 'price', widget: 'number' }
       - { label: 'Currency', name: 'currency', widget: 'select', options: ["USD", "EUR", "KRW", "VND"] }
-        - { label: 'Status', name: 'status', widget: 'select', options: ["for-sale", "for-rent", "sold"] }
-        - { label: 'Property Type', name: 'property_type', widget: 'select', options: ["penthouse", "villa", "duplex", "apartment"] }
+      - { label: 'Status', name: 'status', widget: 'select', options: ["for-sale", "for-rent", "sold"] }
+      - { label: 'Property Type', name: 'property_type', widget: 'select', options: ["penthouse", "villa", "duplex", "apartment"] }
       - { label: 'Number of bedrooms', name: 'bedrooms', widget: 'number' }
       - { label: 'Number of bathrooms', name: 'bathrooms', widget: 'number' }
       - { label: 'Area', name: 'area', widget: 'number' }
