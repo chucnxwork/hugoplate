@@ -10,4 +10,6 @@ You see this every day... but almost nobody knows this.Strawberries wear their s
 
 <https://youtube.com/shorts/ztU_qWjph94>
 
+{{< youtube ztU_qWjph94 >}}
+
 \#Wonderloom #Strawberries #NatureFacts #MindBlown #ScienceFacts #DidYouKnow #CuriousFacts #FruitFacts

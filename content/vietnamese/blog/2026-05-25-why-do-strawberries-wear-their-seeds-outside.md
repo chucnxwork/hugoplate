@@ -21,5 +21,3 @@ You see this every day... but almost nobody knows this.Strawberries wear their s
 
 {{< youtube ztU_qWjph94 >}}
 
-{{< youtube https://youtube.com/shorts/ztU_qWjph94 >}}
-
