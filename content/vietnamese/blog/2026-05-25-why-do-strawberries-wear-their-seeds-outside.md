@@ -18,3 +18,8 @@ tags:
 You see this every day... but almost nobody knows this.Strawberries wear their seeds on the outside… except those “seeds” aren’t actually seeds at all 🍓🤯 
 
 <https://youtube.com/shorts/ztU_qWjph94>
+
+{{< youtube ztU_qWjph94 >}}
+
+{{< youtube [ztU_qWjph94](https://youtube.com/shorts/ztU_qWjph94) >}}
+
