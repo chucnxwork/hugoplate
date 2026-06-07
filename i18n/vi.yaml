@@ -16,3 +16,18 @@ full-name: Họ và tên
 message: Lời nhắn
 real-estate: Bất động sản
 cooking: Nấu ăn
+working-mail: Địa chỉ email
+phone: Số điện thoại
+search-listings: Tìm kiếm BĐS
+status: Trạng thái
+bedrooms: Số phòng ngủ
+price-range: Khoảng giá
+reset: Đặt lại
+filter_no_results: Không có kết quả phù hợp với tiêu chí tìm kiếm và lọc của bạn.
+any-status: Bất kỳ trạng thái nào
+for-sale: Đang bán
+for-rent: Cho thuê
+sold: Đã bán
+any: Bất kỳ
+up-to-$100k: Tối đa $100k
+search_listings_input_placeholder: Tìm kiếm theo tên, thành phố, bang, loại...

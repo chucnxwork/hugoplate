@@ -47,4 +47,18 @@ features:
       enable: false
       label: ""
       link: "#"
+
+  - title: "Liên hệ với chúng tôi"
+    image: "/images/service-1.png"
+    content: "Chúng tôi thành thạo 3 ngôn ngữ: Tiếng Anh, Tiếng Việt, Tiếng Hàn."
+    bulletpoints:
+      - "Điện thoại: 410-940-7756"
+      - "Email: thaontbroker@gmail.com"
+      - "Văn phòng: "
+      - "LinkedIn: [Thi Thao Nguyen](https://www.linkedin.com/in/thi-thao-nguyen-067a6b334/)"
+    button:
+      enable: true
+      label: "Liên hệ với chúng tôi"
+      link: "/vi/contact"
+
 ---

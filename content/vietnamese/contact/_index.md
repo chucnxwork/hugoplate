@@ -1,5 +1,5 @@
 ---
-title: "Contact"
+title: "Liên hệ"
 meta_title: ""
 description: "this is meta description"
 layout: "contact"

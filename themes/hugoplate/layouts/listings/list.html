@@ -5,22 +5,22 @@
       <div class="listing-filters card p-6 mb-8">
         <div class="grid gap-4 lg:grid-cols-5">
           <div>
-            <label for="listing-search" class="form-label">Search listings</label>
-            <input id="listing-search" type="search" class="w-full" placeholder="Search by title, city, state, type..." />
+            <label for="listing-search" class="form-label">{{ T "search-listings" | default "Search listings" }}</label>
+            <input id="listing-search" type="search" class="w-full" placeholder="{{ T "search_listings_input_placeholder" | default "Search by title, city, state, type..." }}" />
           </div>
           <div>
-            <label for="listing-status" class="form-label">Status</label>
+            <label for="listing-status" class="form-label">{{ T "status" | default "Status" }}</label>
             <select id="listing-status" class="form-select w-full">
-              <option value="">Any status</option>
-              <option value="for-sale">For sale</option>
-              <option value="for-rent">For rent</option>
-              <option value="sold">Sold</option>
+              <option value="">{{ T "any-status" | default "Any status" }}</option>
+              <option value="for-sale">{{ T "for-sale" | default "For sale" }}</option>
+              <option value="for-rent">{{ T "for-rent" | default "For rent" }}</option>
+              <option value="sold">{{ T "sold" | default "Sold" }}</option>
             </select>
           </div>
           <div>
-            <label for="listing-bedrooms" class="form-label">Bedrooms</label>
+            <label for="listing-bedrooms" class="form-label">{{ T "bedrooms" | default "Bedrooms" }}</label>
             <select id="listing-bedrooms" class="form-select w-full">
-              <option value="">Any</option>
+              <option value="">{{ T "any" | default "Any" }}</option>
               <option value="1">1+</option>
               <option value="2">2+</option>
               <option value="3">3+</option>
@@ -29,23 +29,23 @@
             </select>
           </div>
           <div>
-            <label for="listing-price" class="form-label">Price range</label>
+            <label for="listing-price" class="form-label">{{ T "price-range" | default "Price range" }}</label>
             <select id="listing-price" class="form-select w-full">
-              <option value="">Any</option>
-              <option value="0-100000">Up to $100k</option>
+              <option value="">{{ T "any" | default "Any" }}</option>
+              <option value="0-100000">{{ T "up-to-$100k" | default "Up to $100k" }}</option>
               <option value="100000-300000">$100k–$300k</option>
               <option value="300000-500000">$300k–$500k</option>
               <option value="500000-999999999">$500k+</option>
             </select>
           </div>
           <div class="flex items-end gap-3">
-            <button id="listing-reset" type="button" class="btn btn-outline-primary w-full">Reset</button>
+            <button id="listing-reset" type="button" class="btn btn-outline-primary w-full">{{ T "reset" | default "Reset" }}</button>
           </div>
         </div>
       </div>
 
       <div id="listings-empty" class="hidden text-center text-muted py-12">
-        No listings match your search and filter criteria.
+        {{ T "filter_no_results" | default "No listings match your search and filter criteria." }}
       </div>
 
       <div id="listings-grid" class="grid md:grid-cols-3 gap-6">

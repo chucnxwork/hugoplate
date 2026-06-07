@@ -11,7 +11,7 @@ Xin chào, tôi là Thảo - Associate Broker thành thạo tiếng Việt, Anh 
 
 Đối với tôi, bất động sản không chỉ là mua bán, mà là hành trình thấu hiểu sâu sắc nhu cầu, mục tiêu tài chính và cả những điều nhỏ nhất trong cuộc sống thường ngày của bạn. Tôi luôn đặt sự **tận tâm, minh bạch, lắng nghe và tối ưu chi phí** lên hàng đầu trong mọi giao dịch - để bạn có thể đưa ra quyết định tự tin, an toàn và thoải mái hơn bạn tưởng.
 
-👉 Kết nối với tôi — tôi luôn sẵn sàng lắng nghe và đồng hành cùng bạn trên hành trình bất động sản.
+👉 Kết nối với tôi - tôi luôn sẵn sàng lắng nghe và đồng hành cùng bạn trên hành trình bất động sản.
 
 ### Tại sao chọn tôi?
 

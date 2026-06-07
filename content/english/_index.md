@@ -47,4 +47,17 @@ features:
       enable: false
       label: ""
       link: "#"
+
+  - title: "Contact Us"
+    image: "/images/service-1.png"
+    content: "We fluent in Vietnamese, English, and Korean."
+    bulletpoints:
+      - "Phone: 410-940-7756"
+      - "Email: thaontbroker@gmail.com"
+      - "Office: "
+      - "LinkedIn: [Thi Thao Nguyen](https://www.linkedin.com/in/thi-thao-nguyen-067a6b334/)"
+    button:
+      enable: true
+      label: "Contact Us"
+      link: "/contact"
 ---
