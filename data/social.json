@@ -1,19 +1,14 @@
 {
   "main": [
     {
-      "name": "facebook",
-      "icon": "fab fa-facebook",
-      "link": "https://www.facebook.com/"
+      "name": "phone",
+      "icon": "fa-solid fa-phone",
+      "link": "tel:4109407756"
     },
     {
-      "name": "twitter",
-      "icon": "fab fa-twitter",
-      "link": "https://twitter.com/"
-    },
-    {
-      "name": "github",
-      "icon": "fab fa-github",
-      "link": "https://www.github.com/"
+      "name": "email",
+      "icon": "fa-solid fa-envelope",
+      "link": "mailto:thaontbroker@gmail.com"
     },
     {
       "name": "linkedin",
