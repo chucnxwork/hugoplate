@@ -20,7 +20,8 @@ theme_default = "system" # available options [light/dark/system]
 # Main Sections
 mainSections = ["blog"]
 # contact form action
-contact_form_action = "#" # contact form works with [https://airform.io/] or [https://formspree.io]
+contact_form_action = "https://airform.io/chucnxwork@gmail.com" # contact form works with [https://airform.io/] or [https://formspree.io]
+#contact_form_action = "https://docs.google.com/forms/d/e/1FAIpQLSdM2PJpxLnsTYsR_gVa4rsbvtQy8lasYMp5XMhGv2odc8rvQw/viewform?embedded=true"
 booking_form_action = "" # leave empty to use contact_form_action for booking requests
 # google tag manager, see https://developers.google.com/tag-manager/
 google_tag_manager = "" # example: G-XXXXXXXXXX

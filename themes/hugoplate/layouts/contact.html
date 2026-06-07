@@ -6,44 +6,48 @@
     <div class="container">
       <div class="row">
         <div class="md:col-10 lg:col-6 mx-auto">
-          <form action="{{ site.Params.contact_form_action }}" method="POST">
-            <div class="mb-6">
-              <label for="name" class="form-label">
-                {{ T "full-name" | default "Full Name" }} <span class="text-red-500">*</span>
-              </label>
-              <input
-                id="name"
-                name="name"
-                class="form-input"
-                placeholder="{{ T "john-doe" | default "John Doe" }}"
-                type="text" />
-            </div>
-            <div class="mb-6">
-              <label for="email" class="form-label">
-                {{ T "working-mail" | default "Working Mail" }} <span class="text-red-500">*</span>
-              </label>
-              <input
-                id="email"
-                name="email"
-                class="form-input"
-                placeholder="{{ T "john-doe-email" | default "john.doe@email.com" }}"
-                type="email" />
-            </div>
-            <div class="mb-6">
-              <label for="message" class="form-label">
-                {{ T "message" | default "Message" }} <span class="text-red-500">*</span>
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                class="form-input"
-                placeholder="{{ T "message-goes-here" | default "Message goes here..." }}"
-                rows="8"></textarea>
-            </div>
-            <input type="hidden" name="_subject" value="New contact request from {{ site.Title }}" />
-            <input type="hidden" name="form_type" value="contact" />
-            <button type="submit" class="btn btn-primary">{{ T "submit" | default "Submit" }}</button>
-          </form>
+          {{ if hasPrefix site.Params.contact_form_action "https://docs.google.com/forms" }}
+            <iframe src="{{ site.Params.contact_form_action }}" width="640" height="960" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          {{ else }}
+            <form action="{{ site.Params.contact_form_action }}" method="POST">
+              <div class="mb-6">
+                <label for="name" class="form-label">
+                  {{ T "full-name" | default "Full Name" }} <span class="text-red-500">*</span>
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  placeholder="{{ T "john-doe" | default "John Doe" }}"
+                  type="text" />
+              </div>
+              <div class="mb-6">
+                <label for="email" class="form-label">
+                  {{ T "working-mail" | default "Working Mail" }} <span class="text-red-500">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="{{ T "john-doe-email" | default "john.doe@email.com" }}"
+                  type="email" />
+              </div>
+              <div class="mb-6">
+                <label for="message" class="form-label">
+                  {{ T "message" | default "Message" }} <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-input"
+                  placeholder="{{ T "message-goes-here" | default "Message goes here..." }}"
+                  rows="8"></textarea>
+              </div>
+              <input type="hidden" name="_subject" value="New contact request from {{ site.Title }}" />
+              <input type="hidden" name="form_type" value="contact" />
+              <button type="submit" class="btn btn-primary">{{ T "submit" | default "Submit" }}</button>
+            </form>
+          {{ end }}
         </div>
       </div>
     </div>
