@@ -51,11 +51,16 @@ url = "/about"
 weight = 1
 
 [[footer]]
-name = "Elements"
-url = "/elements"
+name = "Listings"
+url = "/listings"
 weight = 2
 
 [[footer]]
-name = "Privacy Policy"
-url = "/privacy-policy"
+name = "Blog"
+url = "/blog"
 weight = 3
+
+[[footer]]
+name = "Contact"
+url = "/contact"
+weight = 4
