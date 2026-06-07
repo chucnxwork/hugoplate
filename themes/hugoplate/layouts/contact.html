@@ -18,8 +18,8 @@
                   id="name"
                   name="name"
                   class="form-input"
-                  placeholder="{{ T "john-doe" | default "John Doe" }}"
-                  type="text" />
+                  type="text"
+                  required/>
               </div>
               <div class="mb-6">
                 <label for="email" class="form-label">
@@ -29,18 +29,27 @@
                   id="email"
                   name="email"
                   class="form-input"
-                  placeholder="{{ T "john-doe-email" | default "john.doe@email.com" }}"
-                  type="email" />
+                  type="email"
+                  required/>
+              </div>
+              <div class="mb-6">
+                <label for="phone" class="form-label">
+                  {{ T "phone" | default "Phone" }}
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  type="tel" />
               </div>
               <div class="mb-6">
                 <label for="message" class="form-label">
-                  {{ T "message" | default "Message" }} <span class="text-red-500">*</span>
+                  {{ T "message" | default "Message" }}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   class="form-input"
-                  placeholder="{{ T "message-goes-here" | default "Message goes here..." }}"
                   rows="8"></textarea>
               </div>
               <input type="hidden" name="_subject" value="New contact request from {{ site.Title }}" />
