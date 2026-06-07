@@ -1,0 +1,25 @@
+{{ define "main" }}
+  <section class="section-sm text-center">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="sm:col-10 md:col-8 lg:col-6">
+          <span
+            class="text-[8rem] block font-bold text-text-dark dark:text-darkmode-text-dark">
+            404
+          </span>
+          <h1 class="h2 mb-4">Không tìm thấy trang</h1>
+          <div class="content">
+            <p>
+              Trang bạn đang tìm kiếm có thể đã bị xóa, tên đã được thay đổi, hoặc tạm thời không khả dụng.
+            </p>
+          </div>
+          <a
+            href="{{ site.BaseURL | relLangURL }}"
+            class="btn btn-primary mt-8">
+            Quay lại trang chủ
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

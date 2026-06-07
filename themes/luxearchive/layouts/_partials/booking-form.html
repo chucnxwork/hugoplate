@@ -1,0 +1,49 @@
+<div class="card p-4 mt-6 booking-form">
+  <h3 class="font-semibold mb-4">{{ .Title | default "Request a Viewing" }}</h3>
+  <form action="{{ .Action }}" method="POST">
+    {{ with .HiddenFields }}
+      {{ range $name, $value := . }}
+        <input type="hidden" name="{{ $name }}" value="{{ $value }}" />
+      {{ end }}
+    {{ end }}
+
+    <div class="mb-4">
+      <label for="bf-name" class="form-label">
+        {{ T "full-name" | default "Full Name" }} <span class="text-red-500">*</span>
+      </label>
+      <input id="bf-name" name="name" class="form-input" type="text" required />
+    </div>
+
+    <div class="mb-4">
+      <label for="bf-email" class="form-label">
+        {{ T "working-mail" | default "Working Mail" }} <span class="text-red-500">*</span>
+      </label>
+      <input id="bf-email" name="email" class="form-input" type="email" required />
+    </div>
+
+    <div class="mb-4">
+      <label for="bf-phone" class="form-label">Phone</label>
+      <input id="bf-phone" name="phone" class="form-input" type="tel" />
+    </div>
+
+    <div class="mb-4 grid md:grid-cols-2 gap-4">
+      <div>
+        <label for="bf-date" class="form-label">Preferred Date</label>
+        <input id="bf-date" name="preferred_date" class="form-input" type="date" />
+      </div>
+      <div>
+        <label for="bf-time" class="form-label">Preferred Time</label>
+        <input id="bf-time" name="preferred_time" class="form-input" type="time" />
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="bf-message" class="form-label">
+        {{ T "message" | default "Message" }}
+      </label>
+      <textarea id="bf-message" name="message" class="form-input" rows="4" placeholder="Tell us more about your visit request..."></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ .ButtonText | default "Request Viewing" }}</button>
+  </form>
+</div>
