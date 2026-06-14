@@ -1,4 +1,53 @@
 {{ define "main" }}
+  <!-- Hero Section -->
+  {{ with .Params.banner }}
+    <section class="relative h-screen min-h-200 flex items-center justify-center pt-24 overflow-hidden -mt-24">
+      <div class="absolute inset-0 z-0">
+        {{ with resources.Get .image }}
+          {{ .Publish }}
+        {{ end }}
+        
+        <img class="w-full h-full object-cover brightness-[0.7]"
+          data-alt="A cinematic wide-angle photograph of a sprawling brutalist luxury villa at dusk. The architecture features clean concrete lines, floor-to-ceiling glass walls, and a glowing infinity pool that reflects the deep indigo twilight sky. Warm interior lighting spills out onto meticulously manicured desert landscaping. The overall mood is quiet, authoritative, and exceptionally high-end, utilizing a palette of cool greys and warm amber glows."
+          src="{{ .image }}" />
+        
+        <div class="absolute inset-0 bg-linear-to-b from-primary/40 to-primary/10"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl w-full px-8 text-center text-on-primary">
+        <h1 class="font-display-lg text-display-lg mb-stack-lg text-white">
+          {{ .title | markdownify }}
+        </h1>
+        <p class="font-body-lg text-body-lg max-w-2xl mx-auto mb-12 text-on-primary/90 text-white">
+          {{ .content | markdownify }}
+        </p>
+        <!-- Search Bar -->
+        <div class="max-w-4xl mx-auto bg-surface-container-lowest bg-white dark:bg-darkmode-body p-2 flex flex-col md:flex-row gap-2 shadow-2xl">
+          <div class="flex-1 flex items-center px-4 border-b md:border-b-0 md:border-r border-outline-variant/30 border-border dark:border-darkmode-border">
+            <i class="fa-solid fa-location-dot text-text-light px-2"></i>
+            <input class="w-full bg-transparent border-none focus:ring-0 text-primary dark:text-darkmode-primary font-body-md py-4"
+              placeholder="{{ T "search_listings_input_placeholder" | default "Search by title, city, state, type..." }}" type="text" />
+          </div>
+          <div class="flex-1 flex items-center px-4 border-b md:border-b-0 md:border-r border-outline-variant/30 border-border dark:border-darkmode-border">
+            <i class="fa-solid fa-dollar-sign text-text-light px-2"></i>
+            <select class="w-full bg-transparent dark:bg-darkmode-body border-none focus:ring-0 text-primary dark:text-darkmode-primary font-body-md py-4">
+              <option>{{ T "price-range" | default "Price Range" }}</option>
+              <option value="0-100000">{{ T "up-to-$100k" | default "Up to $100k" }}</option>
+              <option value="100000-300000">$100k–$300k</option>
+              <option value="300000-500000">$300k–$500k</option>
+              <option value="500000-999999999">$500k+</option>
+            </select>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary px-10 py-4 font-label-md uppercase tracking-widest">
+            {{ T "explore" | default "Explore" }}
+          </a>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Banner -->
+
   <!-- Banner -->
   {{ with .Params.banner }}
     <section class="section pt-14">
