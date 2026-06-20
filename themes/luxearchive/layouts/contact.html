@@ -1,0 +1,151 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row">
+        <div class="md:col-10 lg:col-6 mx-auto">
+          {{ if hasPrefix site.Params.contact_form_action "https://docs.google.com/forms" }}
+            <iframe src="{{ site.Params.contact_form_action }}" width="640" height="960" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          {{ else }}
+            <form action="{{ site.Params.contact_form_action }}" method="POST">
+              <div class="mb-6">
+                <label for="name" class="form-label">
+                  {{ T "full-name" | default "Full Name" }} <span class="text-red-500">*</span>
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  type="text"
+                  required/>
+              </div>
+              <div class="mb-6">
+                <label for="email" class="form-label">
+                  {{ T "working-mail" | default "Working Mail" }} <span class="text-red-500">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  type="email"
+                  required/>
+              </div>
+              <div class="mb-6">
+                <label for="phone" class="form-label">
+                  {{ T "phone" | default "Phone" }}
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  type="tel" />
+              </div>
+              <div class="mb-6">
+                <label for="message" class="form-label">
+                  {{ T "message" | default "Message" }}
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-input"
+                  rows="8"></textarea>
+              </div>
+              <input type="hidden" name="_subject" value="New contact request from {{ site.Title }}" />
+              <input type="hidden" name="form_type" value="contact" />
+              <button type="submit" class="btn btn-primary">{{ T "submit" | default "Submit" }}</button>
+            </form>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- map (Google Maps or OpenStreetMap) -->
+  {{ $useOsm := site.Params.openstreet_map.enable }}
+  {{ $useGmap := site.Params.google_map.enable }}
+  {{ if or $useGmap $useOsm }}
+    {{ $map := site.Params.google_map }}
+    {{ if $useOsm }}
+      {{ $map = site.Params.openstreet_map }}
+    {{ end }}
+    
+    {{ with resources.Get $map.map_marker }}
+      {{ .Publish }}
+    {{ end }}
+
+    <div
+      id="map"
+      style="height: 400px;"
+      data-latitude="{{ $map.map_latitude }}"
+      data-longitude="{{ $map.map_longitude }}"
+      data-marker="{{ $map.map_marker | relURL }}"
+      data-marker-name="{{ site.Title }}"></div>
+  {{ end }}
+
+  {{ with site.Params.subscription }}
+    {{ if .enable }}
+      <!-- subscription form -->
+      <form
+        action="{{ .mailchimp_form_action | safeURL }}"
+        method="post"
+        id="mc-embedded-subscribe-form"
+        novalidate="novalidate">
+        <div class="input-group w-75 mx-auto mb-3">
+          <input
+            type="email"
+            name="EMAIL"
+            placeholder="{{ T "email" | default "Email" }}"
+            class="form-control required email mce_inline_error"
+            id="mce-EMAIL"
+            aria-required="true"
+            autocomplete="off"
+            required />
+          <button
+            class="input-group-text"
+            name="subscribe"
+            id="mc-embedded-subscribe">
+            {{ .button_label }}
+          </button>
+        </div>
+        <input
+          type="hidden"
+          name="EMAILTYPE"
+          id="mce-EMAILTYPE-0"
+          value="html" />
+        <div style="position:absolute;left:-5000px" aria-hidden="true">
+          <input type="text" name="{{ .name }}" tabindex="-1" />
+        </div>
+      </form>
+      <div id="mce-responses" class="clear">
+        <div
+          class="response text-white"
+          id="mce-error-response"
+          style="display:none"></div>
+        <div
+          class="response text-white"
+          id="mce-success-response"
+          style="display:none"></div>
+      </div>
+      <script
+        type="text/javascript"
+        src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+      <!-- /subscription form -->
+    {{ end }}
+  {{ end }}
+
+  {{ if $useGmap }}
+    {{ $gmap := resources.Get "plugins/maps/google-map.js" }}
+    <script defer src="{{ $gmap.RelPermalink }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ site.Params.google_map.map_api_key }}&libraries=places"></script>
+  {{ end }}
+
+  {{ if $useOsm }}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    {{ $osm := resources.Get "plugins/maps/osm-map.js" }}
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script defer src="{{ $osm.RelPermalink }}"></script>
+  {{ end }}
+
+{{ end }}

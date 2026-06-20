@@ -1,0 +1,22 @@
+<article class="listing-card card p-5"
+  data-title="{{ .Title | lower }}"
+  data-city="{{ .Params.city | lower }}"
+  data-state="{{ .Params.state | lower }}"
+  data-status="{{ .Params.status | lower }}"
+  data-bedrooms="{{ .Params.bedrooms }}"
+  data-bathrooms="{{ .Params.bathrooms }}"
+  data-price="{{ .Params.price }}"
+  data-property-type="{{ .Params.property_type | lower }}"
+  data-summary="{{ .Summary | lower }}">
+  {{ with .Params.images }}
+    <img src="{{ index . 0 }}" alt="{{ $.Title }}" class="w-full h-56 object-cover rounded mb-4" />
+  {{ end }}
+  <div class="text-sm uppercase tracking-[0.14em] text-muted mb-2">{{ .Params.property_type | title }} · {{ .Params.city }}, {{ .Params.state }}</div>
+  <h3 class="text-lg font-semibold mb-2"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <div class="price mb-3">{{ with .Params.price }}{{ . | humanize }} {{ $.Params.currency | default "USD" }}{{ end }}</div>
+  <div class="flex flex-wrap gap-3 text-sm text-muted">
+    <span>{{ .Params.bedrooms }} bd</span>
+    <span>{{ .Params.bathrooms }} ba</span>
+    <span>{{ .Params.area }} {{ .Params.area_unit }}</span>
+  </div>
+</article>

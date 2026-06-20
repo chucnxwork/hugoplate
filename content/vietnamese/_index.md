@@ -3,7 +3,7 @@
 banner:
   title: "Tìm nhà hoàn hảo cùng đại lý chuyên nghiệp"
   content: "Dịch vụ bất động sản cao cấp cho người mua, người bán và nhà đầu tư — với kiến thức thị trường địa phương và hỗ trợ tận tâm."
-  image: "/images/backgrounds/erikawittlieb-house-2511060.jpg"
+  image: "/images/backgrounds/pexels-house-1867187_1920.jpg"
   button:
     enable: true
     label: "Xem danh sách"

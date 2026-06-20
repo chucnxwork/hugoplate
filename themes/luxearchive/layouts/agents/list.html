@@ -1,0 +1,12 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+  <section class="section">
+    <div class="container">
+      <div class="grid md:grid-cols-3 gap-6">
+        {{ range .Pages }}
+          {{ partial "components/agent-card" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

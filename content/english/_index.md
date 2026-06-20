@@ -3,7 +3,7 @@
 banner:
   title: "Find Your Perfect Home with Expert Brokerage"
   content: "Premium real estate services for buyers, sellers, and investors — delivered with market knowledge, local expertise, and a personal touch."
-  image: "/images/backgrounds/erikawittlieb-house-2511060.jpg"
+  image: "/images/backgrounds/pexels-house-1867187_1920.jpg"
   button:
     enable: true
     label: "View Listings"
