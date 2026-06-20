@@ -115,14 +115,14 @@ enable = false
 map_api_key = ""
 map_latitude = "39.73920590883847"
 map_longitude = "-104.98887076186998"
-map_marker = "images/marker.png"
+map_marker = "images/maps/marker3.png"
 
 # OpenStreetMap (Leaflet) configuration
 [openstreet_map]
 enable = true
 map_latitude = "39.73920590883847"
 map_longitude = "-104.98887076186998"
-map_marker = "images/marker.png"
+map_marker = "images/maps/marker3.png"
 
 
 # Subscription
