@@ -87,5 +87,12 @@ document.addEventListener("DOMContentLoaded", function () {
   priceSelect.addEventListener("change", filterListings);
   resetButton.addEventListener("click", resetFilters);
 
+  // Load initial filter values from URL query parameters if present
+  var urlParams = new URLSearchParams(window.location.search);
+  searchInput.value = urlParams.get("search") || "";
+  statusSelect.value = urlParams.get("status") || "";
+  bedroomsSelect.value = urlParams.get("bedrooms") || "";
+  priceSelect.value = urlParams.get("price") || "";
+
   filterListings();
 });

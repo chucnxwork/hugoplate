@@ -24,13 +24,13 @@
         <div class="max-w-4xl mx-auto bg-surface-container-lowest bg-white dark:bg-darkmode-body p-2 flex flex-col md:flex-row gap-2 shadow-2xl">
           <div class="flex-1 flex items-center px-4 border-b md:border-b-0 md:border-r border-outline-variant/30 border-border dark:border-darkmode-border">
             <i class="fa-solid fa-location-dot text-text-light px-2"></i>
-            <input class="w-full bg-transparent border-none focus:ring-0 text-primary dark:text-darkmode-primary font-body-md py-4"
+            <input id="search-input" autofocus class="w-full bg-transparent border-none focus:ring-0 text-primary dark:text-darkmode-primary font-body-md py-4"
               placeholder="{{ T "search_listings_input_placeholder" | default "Search by title, city, state, type..." }}" type="text" />
           </div>
           <div class="flex-1 flex items-center px-4 border-b md:border-b-0 md:border-r border-outline-variant/30 border-border dark:border-darkmode-border">
             <i class="fa-solid fa-dollar-sign text-text-light px-2"></i>
-            <select class="w-full bg-transparent dark:bg-darkmode-body border-none focus:ring-0 text-primary dark:text-darkmode-primary font-body-md py-4">
-              <option>{{ T "price-range" | default "Price Range" }}</option>
+            <select id="price-select" class="w-full bg-transparent dark:bg-darkmode-body border-none focus:ring-0 text-primary dark:text-darkmode-primary font-body-md py-4">
+              <option value="">{{ T "price-range" | default "Price Range" }}</option>
               <option value="0-100000">{{ T "up-to-$100k" | default "Up to $100k" }}</option>
               <option value="100000-300000">$100k–$300k</option>
               <option value="300000-500000">$300k–$500k</option>
@@ -39,44 +39,10 @@
           </div>
           <a
             href="#"
+            id="search-button"
             class="btn btn-primary px-10 py-4 font-label-md uppercase tracking-widest">
             {{ T "explore" | default "Explore" }}
           </a>
-        </div>
-      </div>
-    </section>
-  {{ end }}
-  <!-- /Banner -->
-
-  <!-- Banner -->
-  {{ with .Params.banner }}
-    <section class="section pt-14">
-      <div class="container">
-        <div class="row justify-center">
-          <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <h1 class="mb-4 text-h3 lg:text-h1">
-              {{ .title | markdownify }}
-            </h1>
-            <p class="mb-8">
-              {{ .content | markdownify }}
-            </p>
-            {{ with .button }}
-              {{ if .enable }}
-                <a
-                  class="btn btn-primary"
-                  href="{{ .link | absURL }}"
-                  {{ if strings.HasPrefix .link `http` }}
-                    target="_blank" rel="noopener"
-                  {{ end }}>
-                  {{ .label }}
-                </a>
-              {{ end }}
-            {{ end }}
-          </div>
-          <div class="col-12">
-            {{/* image modules comes from https://github.com/gethugothemes/hugo-modules/tree/master/images */}}
-            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
-          </div>
         </div>
       </div>
     </section>
@@ -236,4 +202,41 @@
   <!-- Call to action -->
   {{ partial "call-to-action" . }}
   <!-- /Call to action -->
+
+  <!-- search button handler -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var searchInput = document.getElementById("search-input");
+      var priceSelect = document.getElementById("price-select");
+      var searchButton = document.getElementById("search-button");
+
+      function searchListings() {
+        var searchValue = encodeURIComponent(searchInput.value.trim());
+        var priceValue = encodeURIComponent(priceSelect.value);
+        var queryParams = [];
+
+        if (searchValue) {
+          queryParams.push("search=" + searchValue);
+        }
+        if (priceValue) {
+          queryParams.push("price=" + priceValue);
+        }
+
+        var queryString = queryParams.length > 0 ? "?" + queryParams.join("&") : "";
+        window.location.href = "listings/" + queryString;
+      }
+
+      searchButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        searchListings();
+      });
+
+      searchInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          searchListings();
+        }
+      });
+    });
+  </script>
 {{ end }}
