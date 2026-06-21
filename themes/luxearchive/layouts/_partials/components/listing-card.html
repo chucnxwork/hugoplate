@@ -1,4 +1,4 @@
-<article class="listing-card card p-5"
+<article class="listing-card card min-w-100 group"
   data-title="{{ .Title | lower }}"
   data-city="{{ .Params.city | lower }}"
   data-state="{{ .Params.state | lower }}"
@@ -8,15 +8,36 @@
   data-price="{{ .Params.price }}"
   data-property-type="{{ .Params.property_type | lower }}"
   data-summary="{{ .Summary | lower }}">
-  {{ with .Params.images }}
-    <img src="{{ index . 0 }}" alt="{{ $.Title }}" class="w-full h-56 object-cover rounded mb-4" />
-  {{ end }}
-  <div class="text-sm uppercase tracking-[0.14em] text-muted mb-2">{{ .Params.property_type | title }} · {{ .Params.city }}, {{ .Params.state }}</div>
-  <h3 class="text-lg font-semibold mb-2"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-  <div class="price mb-3">{{ with .Params.price }}{{ . | humanize }} {{ $.Params.currency | default "USD" }}{{ end }}</div>
-  <div class="flex flex-wrap gap-3 text-sm text-muted">
-    <span>{{ .Params.bedrooms }} bd</span>
-    <span>{{ .Params.bathrooms }} ba</span>
-    <span>{{ .Params.area }} {{ .Params.area_unit }}</span>
+  <div class="relative overflow-hidden aspect-3/2 mb-6">
+    {{ with .Params.images }}
+    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      alt="{{ $.Title }}"
+      data-alt="{{ $.Title }}"
+      src="{{ index . 0 }}" />
+    {{ end }}
+    <!-- <div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 text-xs uppercase tracking-widest">Just Listed</div> -->
+  </div>
+  <h4 class="font-headline-sm text-headline-sm">
+    {{ .Params.price | lang.FormatCurrency 0 $.Params.currency }}
+  </h4>
+  <p class="font-body-md font-bold text-on-surface-variant mb-4">
+    <a href="{{ .RelPermalink }}">
+      {{ .Title }} · {{ .Params.city }}, {{ .Params.state }}
+    </a>
+  </p>
+  <div class="h-px bg-secondary/30 w-full mb-4"></div>
+  <div class="flex gap-6">
+    <div class="flex items-center gap-2">
+      <i class="fa-solid fa-bed text-sm"></i>
+      <span class="text-xs uppercase text-on-surface-variant">{{ .Params.bedrooms }} {{ T "beds" | default "Beds" }}</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <i class="fa-solid fa-bath text-sm"></i>
+      <span class="text-xs uppercase text-on-surface-variant">{{ .Params.bathrooms }} {{ T "baths" | default "Baths" }}</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <i class="fa-solid fa-ruler-combined text-sm"></i>
+      <span class="text-xs uppercase text-on-surface-variant">{{ .Params.area }} {{ .Params.area_unit }}</span>
+    </div>
   </div>
 </article>

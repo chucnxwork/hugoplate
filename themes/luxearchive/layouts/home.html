@@ -14,7 +14,7 @@
         <div class="absolute inset-0 bg-linear-to-b from-primary/40 to-primary/10"></div>
       </div>
       <div class="relative z-10 max-w-7xl w-full px-8 text-center text-on-primary">
-        <h1 class="font-display-lg text-display-lg mb-stack-lg text-white">
+        <h1 class="font-display-lg text-display-lg mb-8 text-white">
           {{ .title | markdownify }}
         </h1>
         <p class="font-body-lg text-body-lg max-w-2xl mx-auto mb-12 text-on-primary/90 text-white">
@@ -24,12 +24,12 @@
         <div class="max-w-4xl mx-auto bg-surface-container-lowest bg-white dark:bg-darkmode-body p-2 flex flex-col md:flex-row gap-2 shadow-2xl">
           <div class="flex-1 flex items-center px-4 border-b md:border-b-0 md:border-r border-outline-variant/30 border-border dark:border-darkmode-border">
             <i class="fa-solid fa-location-dot text-text-light px-2"></i>
-            <input id="search-input" autofocus class="w-full bg-transparent border-none focus:ring-0 text-primary dark:text-darkmode-primary font-body-md py-4"
+            <input id="search-input" autofocus class="w-full bg-transparent border-none focus:ring-0 font-body-md py-4"
               placeholder="{{ T "search_listings_input_placeholder" | default "Search by title, city, state, type..." }}" type="text" />
           </div>
           <div class="flex-1 flex items-center px-4 border-b md:border-b-0 md:border-r border-outline-variant/30 border-border dark:border-darkmode-border">
             <i class="fa-solid fa-dollar-sign text-text-light px-2"></i>
-            <select id="price-select" class="w-full bg-transparent dark:bg-darkmode-body border-none focus:ring-0 text-primary dark:text-darkmode-primary font-body-md py-4">
+            <select id="price-select" class="w-full bg-transparent dark:bg-darkmode-body border-none focus:ring-0 font-body-md py-4">
               <option value="">{{ T "price-range" | default "Price Range" }}</option>
               <option value="0-100000">{{ T "up-to-$100k" | default "Up to $100k" }}</option>
               <option value="100000-300000">$100k–$300k</option>
@@ -40,7 +40,7 @@
           <a
             href="#"
             id="search-button"
-            class="btn btn-primary px-10 py-4 font-label-md uppercase tracking-widest">
+            class="btn btn-primary px-10 py-4 uppercase tracking-widest">
             {{ T "explore" | default "Explore" }}
           </a>
         </div>
@@ -48,6 +48,36 @@
     </section>
   {{ end }}
   <!-- /Banner -->
+
+  <!-- Featured Listings -->
+  {{ $featured := where (where site.RegularPages "Section" "listings") "Params.status" "for-sale" | first 4 }}
+  {{ if gt (len $featured) 0 }}
+    <section class="section">
+      <div class="container">
+        <div class="flex justify-between items-end mb-8">
+          <div>
+            <span class="text-secondary tracking-widest uppercase">{{ T "the-collection" | default "The Collection" }}</span>
+            <h2 class="font-headline-lg text-headline-lg mt-2">{{ T "featured-listings" | default "Featured Listings" }}</h2>
+          </div>
+          <div class="flex gap-4">
+            <button
+              class="btn btn-outline-primary w-12 h-12 flex items-center justify-center">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button
+              class="btn btn-outline-primary w-12 h-12 flex items-center justify-center">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="flex gap-6 overflow-x-auto scrollbar-none pb-8">
+          {{ range $featured }}
+            {{ partial "components/listing-card" . }}
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
 
   <!-- Features -->
   {{ range $i, $e:= .Params.features }}
@@ -92,27 +122,6 @@
     </section>
   {{ end }}
   <!-- /Features -->
-
-  <!-- Featured Listings -->
-  {{ $featured := where (where site.RegularPages "Section" "listings") "Params.status" "for-sale" | first 4 }}
-  {{ if gt (len $featured) 0 }}
-    <section class="section">
-      <div class="container">
-        <div class="row justify-center mb-10">
-          <div class="md:col-10 lg:col-8 text-center">
-            <span class="uppercase tracking-[0.4em] font-semibold">Featured properties</span>
-            <h2 class="mt-4">Premium homes and investment opportunities</h2>
-            <p class="mt-4 text-muted">Explore a curated selection of our best listings designed for modern buyers and investors.</p>
-          </div>
-        </div>
-        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-          {{ range $featured }}
-            {{ partial "components/listing-card" . }}
-          {{ end }}
-        </div>
-      </div>
-    </section>
-  {{ end }}
 
   <!-- Meet Our Agents -->
   {{ $agents := first 4 (where site.RegularPages "Section" "agents") }}
