@@ -50,7 +50,7 @@
   <!-- /Banner -->
 
   <!-- Featured Listings -->
-  {{ $featured := where (where site.RegularPages "Section" "listings") "Params.status" "for-sale" | first 4 }}
+  {{ $featured := where (where site.RegularPages "Section" "listings") "Params.status" "for-sale" | first 3 }}
   {{ if gt (len $featured) 0 }}
     <section class="section">
       <div class="container">
@@ -59,7 +59,7 @@
             <span class="text-secondary tracking-widest uppercase">{{ T "the-collection" | default "The Collection" }}</span>
             <h2 class="font-headline-lg text-headline-lg mt-2">{{ T "featured-listings" | default "Featured Listings" }}</h2>
           </div>
-          <div class="flex gap-4">
+          {{/*  <div class="flex gap-4">
             <button
               class="btn btn-outline-primary w-12 h-12 flex items-center justify-center">
               <i class="fa-solid fa-chevron-left"></i>
@@ -68,7 +68,7 @@
               class="btn btn-outline-primary w-12 h-12 flex items-center justify-center">
               <i class="fa-solid fa-chevron-right"></i>
             </button>
-          </div>
+          </div>  */}}
         </div>
         <div class="flex gap-6 overflow-x-auto scrollbar-none pb-8">
           {{ range $featured }}
