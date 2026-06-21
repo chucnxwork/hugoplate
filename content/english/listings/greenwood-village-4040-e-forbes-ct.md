@@ -3,10 +3,10 @@ title: Greenwood Village - 4040 E Forbes Ct
 date: 2026-06-21T10:09:00.000+07:00
 description: Greenwood Village - 4040 E Forbes Ct
 images:
-  - /images/cms/1_2_gallery-3.webp
-  - /images/cms/2_2_gallery-3.webp
-  - /images/cms/3_2_gallery-2.jpg
-  - /images/cms/4_2_gallery.jpg
+  - /images/cms/greenword-village-4040e-forbes-ct/1_2_gallery-3.webp
+  - /images/cms/greenword-village-4040e-forbes-ct/2_2_gallery-3.webp
+  - /images/cms/greenword-village-4040e-forbes-ct/3_2_gallery-2.jpg
+  - /images/cms/greenword-village-4040e-forbes-ct/4_2_gallery.jpg
 price: 9495000
 currency: USD
 status: for-sale
